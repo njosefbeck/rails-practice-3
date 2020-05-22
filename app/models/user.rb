@@ -9,7 +9,7 @@ class User < ApplicationRecord
   # Though we save a password_digest to the db,
   # has_secure_password adds a virtual "password" record to the user
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   # Returns the hash digest of the given string
   # could also write "def self.digest(string)"
